@@ -1,10 +1,10 @@
 package com.azhar.dsa.array;
 /*
-* in place
-* stable
-* more shifting
-* O(n^2)
-* */
+ * in place
+ * stable
+ * more shifting
+ * O(n^2.0)
+ * */
 public class InsertionSort implements Sort{
     public static void main(String[] args) {
         sort();
