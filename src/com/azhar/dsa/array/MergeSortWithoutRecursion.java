@@ -26,15 +26,23 @@ public class MergeSortWithoutRecursion implements Sort{
     private static void mergeArray(int[] input, int start, int mid, int end) {
 //        System.out.println();
 //        Sort.print(input);
-       int[] tempArray = new int[end-start];
+
+        if (input[mid - 1] <= input[mid]) {
+            return;
+        }
+
+        int[] tempArray = new int[end-start];
        int tempArrayIndex = 0;
        int localStart = start;
-       int localEnd = end;
+       //int localEnd = end;
        int localMid = mid;
        while(localStart<mid && localMid<end){
            tempArray[tempArrayIndex++] = input[localStart]<input[localMid]?input[localStart++]:input[localMid++];
        }
+       //leftover
+        //move large values to its position
         System.arraycopy(input, localStart, input, start + tempArrayIndex, mid - localStart);
+       //copy lower values to its position
         System.arraycopy(tempArray, 0, input, start, tempArrayIndex);
 //        System.out.println();
 //        Sort.print(input);
