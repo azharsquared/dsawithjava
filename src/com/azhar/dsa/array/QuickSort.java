@@ -8,7 +8,7 @@ public class QuickSort implements Sort{
         sort();
     }
 
-    public static void sort(){
+    private static void sort(){
         int[]  input = Sort.intArray;
         int [] referenceInput = Arrays.copyOf(input,input.length);
         quickSort(input,0,input.length);
@@ -27,7 +27,7 @@ public class QuickSort implements Sort{
         quickSort(input,pivot+1,end);
     }
 
-    private static int partition(int[] input, int start, int end) {
+    protected static int partition(int[] input, int start, int end) {
         int i = start,j=end;
         int pivot = input[start];
         while (i < j ){
