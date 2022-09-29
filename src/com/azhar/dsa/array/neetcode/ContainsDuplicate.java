@@ -11,7 +11,7 @@ public class ContainsDuplicate {
     public static void main(String[] args) {
         int[] input = ArrayInputs.randomInput();
         Sort.print(input);
-        System.out.println(containsDuplicate(input));
+        System.out.println(containsDuplicate2(input));
     }
 
     //Approach 1
@@ -21,5 +21,17 @@ public class ContainsDuplicate {
             return false;
         else
             return true;
+    }
+
+    //Approach 2
+    private static boolean containsDuplicate2(int[] randomInput) {
+        Set<Integer> nonDuplicateItems = new HashSet<>();
+        for (int i=0;i<randomInput.length;i++){
+            if (nonDuplicateItems.contains(randomInput[i])){
+                return true;
+            }
+            nonDuplicateItems.add(randomInput[i]);
+        }
+        return false;
     }
 }
